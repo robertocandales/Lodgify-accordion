@@ -3,7 +3,7 @@
 
 ## Available Scripts
 
-An application used to filter consume an Lodgify API and render the data using an accordion component.
+An application used to consume an Lodgify API and render the data using an accordion component.
 
 ## Installation and Setup Instructions
 
