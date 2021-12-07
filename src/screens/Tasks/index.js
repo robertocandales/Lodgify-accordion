@@ -31,7 +31,7 @@ const Tasks = () => {
           <CircularProgress />
         ) : (
           <>
-            <PaperWrapper>
+            <PaperWrapper elevation={4}>
               <Title>Lodgify Grouped Tasks</Title>
               <ProgressBar tasksData={tasksData} />
               <CustomAccordion tasksData={tasksData} setTasksData={setTasksData} />

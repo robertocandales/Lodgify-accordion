@@ -16,6 +16,8 @@ export const PaperWrapper = styled(Paper)`
   display: flex;
   flex-direction: column;
   width: 70%;
+  height: 100%;
+  margin: 4px 0 40px 0;
 `;
 
 export const Title = styled.h2``;
