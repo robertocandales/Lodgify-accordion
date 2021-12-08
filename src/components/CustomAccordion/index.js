@@ -4,10 +4,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 
 //styles
-import { StyleAccordion, IconWrapper, FlexLayout, StyleAccordionSummary, Text } from './styles';
+import {
+  StyleAccordion,
+  IconWrapper,
+  FlexLayout,
+  StyleAccordionSummary,
+  Text,
+  TextTransformation,
+} from './styles';
 import CustomCheckBox from '../CustomCheckBox';
 
 const CustomAccordion = ({ tasksData = [], setTasksData }) => {
+  const [expanded, setExpanded] = React.useState('panel1');
   const changeCheckValue = (info, indexToChange) => {
     const arrayChanged = tasksData.map((item) => {
       if (info.name === item.name) {
@@ -28,12 +36,31 @@ const CustomAccordion = ({ tasksData = [], setTasksData }) => {
     setTasksData(arrayChanged);
   };
 
+  const handleChange = (panel) => (event, newExpanded) => {
+    setExpanded(newExpanded ? panel : false);
+  };
+
   return (
     <>
       {(tasksData || []).map((taskItem, i) => (
-        <StyleAccordion key={i}>
+        <StyleAccordion
+          key={i}
+          expanded={expanded === `panel${i + 1}`}
+          onChange={handleChange(`panel${i + 1}`)}>
           <StyleAccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={
+              <>
+                {expanded === `panel${i + 1}` ? (
+                  <FlexLayout align='center'>
+                    <ExpandMoreIcon /> <TextTransformation>Hiden</TextTransformation>
+                  </FlexLayout>
+                ) : (
+                  <FlexLayout align='center'>
+                    Show <ExpandMoreIcon />
+                  </FlexLayout>
+                )}
+              </>
+            }
             aria-controls='panel1a-content'
             id='panel1a-header'>
             <IconWrapper>
