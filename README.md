@@ -26,4 +26,7 @@ To Start Server:
 To Visit App:
 
 `localhost:3000/ideas`  
+
+## how it looks?
+
 <img width="1037" alt="accordion" src="https://user-images.githubusercontent.com/61159123/145215276-2e507800-2546-48e0-a98e-1485157459db.png">
