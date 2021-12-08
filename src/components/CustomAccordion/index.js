@@ -52,7 +52,7 @@ const CustomAccordion = ({ tasksData = [], setTasksData }) => {
               <>
                 {expanded === `panel${i + 1}` ? (
                   <FlexLayout align='center'>
-                    <ExpandMoreIcon /> <TextTransformation>Hiden</TextTransformation>
+                    <ExpandMoreIcon /> <TextTransformation>Hide</TextTransformation>
                   </FlexLayout>
                 ) : (
                   <FlexLayout align='center'>
